@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <title>CGPA calculator</title>
+    <body style="background-color:rgb(130, 176, 188);">
+        <div class="container mt-5 justify-content-center">
+            <h2 class="text-light text-center">CGPA CALCULATOR</h2>
+                <div class="card-body text-center">
+                    <form id="fo" class="was-validated">
+                        <table class="table" style="background-color:rgb(227, 220, 220);">
+                            <tr>
+                                <th>SEMESTER</th>
+                                <th>COURSE CODE</th>
+                                <th>COURSE NAME</th>
+                                <th>MARKS</th>
+                                <th>CREDITS</th>
+                                <th>GRADE</th>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>20VC012</td>
+                                <td><i>Versions Control with Git</i></td>
+                                <td><input type="text" id="mark1" ></td>
+                                <td><input type="text" id="cr1"  ></td>
+                                <td id="g1" style="color:rgb(183, 127, 195)"></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>20ITC31</td>
+                                <td><i>Digital Logic and Microprocessors</i></td>
+                                <td><input type="text" id="mark2"></td>
+                                <td><input type="text" id="cr2"  ></td>
+                                <td id="g2" style="color:rgb(183, 127, 195)"></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>20MAT34</td>
+                                <td><i>Discrete Mathematical Structures</i></td>
+                                <td><input type="text" id="mark3"></td>
+                                <td><input type="text" id="cr3"  ></td>
+                                <td id="g3" style="color:rgb(183, 127, 195)"></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>20ITT31</td>
+                                <td><i>Data Structures</i></td>
+                                <td><input type="text" id="mark4" ></td>
+                                <td><input type="text" id="cr4"  ></td>
+                                <td id="g4" style="color:rgb(183, 127, 195)"></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>20ITT32</td>
+                                <td><i>Object Oriented Programming</i></td>
+                                <td><input type="text" id="mark5"></td>
+                                <td><input type="text" id="cr5"  ></td>
+                                <td id="g5" style="color:rgb(183, 127, 195)"></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>20ITT33</td>
+                                <td><i>Computer Organiztion</i></td>
+                                <td><input type="text" id="mark6"></td>
+                                <td><input type="text" id="cr6"  ></td>
+                                <td id="g6" style="color:rgb(183, 127, 195)"></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>20GET31</td>
+                                <td><i>Universal Human Values</i></td>
+                                <td><input type="text" id="mark7"></td>
+                                <td><input type="text" id="cr7"  ></td>
+                                <td id="g7" style="color:rgb(183, 127, 195)"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="gpa">CGPA/GPA</label></td>
+                                <td colspan="5"><input type="text" id="gpa" ></td>
+                                
+                            </tr>
+                            <tr>
+                                <td colspan="5"><center><input type="button" value="calculate CGPA" onclick="cal()" style="background-color: rgb(172, 139, 171);"></center></td>
+                            </tr>
+                            <!--<tr style="color: red;"><td><h5>GPA IS:</h5></td><td><h5 id="gp"></h5></td></tr>-->
+                              <tr style="color: rgb(183, 127, 195);">
+                                <td colspan="2"><h5>GPA :</h5></td> 
+                                <td colspan="2"><h5>CGPA :</h5></td> 
+                                
+                            </tr>
+                            <tr style="color: rgb(183, 127, 195);">
+                               <td colspan="2"> <h5 id="gp"></h5></td>
+                                <td colspan="2"><h5 id="cgp"></h5></td>
+
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+          </div>
+        </div>
+        <script>
+            function cal(){
+                var m1,m2,m3,m4,m5,m6,m7,m8;
+                
+                m1=parseInt(document.getElementById('mark1').value);
+                m2=parseInt(document.getElementById('mark2').value);
+                m3=parseInt(document.getElementById('mark3').value);
+                m4=parseInt(document.getElementById('mark4').value);
+                m5=parseInt(document.getElementById('mark5').value);
+                m6=parseInt(document.getElementById('mark6').value);
+                m7=parseInt(document.getElementById('mark7').value);
+
+
+                m8=parseFloat(document.getElementById('gpa').value);
+
+
+                c1=parseInt(document.getElementById('cr1').value);
+                c2=parseInt(document.getElementById('cr2').value);
+                c3=parseInt(document.getElementById('cr3').value);
+                c4=parseInt(document.getElementById('cr4').value);
+                c5=parseInt(document.getElementById('cr5').value);
+                c6=parseInt(document.getElementById('cr6').value);
+                c7=parseInt(document.getElementById('cr7').value);
+                var gpa1 =((m1*c1)+(m2*c2)+(m3*c3)+(m4*c4)+(m5*c5)+(m6*c6)+(m7*c7))/(c1+c2+c3+c4+c5+c6+c7)/10;
+                //var gpa1 = (m1+m2+m3+m4+m5+m6+m7)/50;
+                document.getElementById("gp").innerHTML=gpa1.toFixed(2);
+                var cgpa= (gpa1+ m8)/2;
+                
+                document.getElementById("cgp").innerHTML=cgpa.toFixed(2);
+                if(m1>90){
+                    document.getElementById("g1").innerHTML="O";                    
+                }
+                else if(m1>80){
+                    document.getElementById("g1").innerHTML="A+";
+                }
+                else if(m1>70){
+                    document.getElementById("g1").innerHTML="A";
+                }
+                else if(m1>60){
+                    document.getElementById("g1").innerHTML="B+";
+                }
+                else if(m1>50){
+                    document.getElementById("g1").innerHTML="B";
+                }
+                else if(m1==0){
+                    document.getElementById("g1").innerHTML="RA/SF";
+                }
+                else{
+                    document.getElementById("g1").innerHTML="W/AB/SA";
+                }        
+                // 2n      
+                if(m2>90){
+                    document.getElementById("g2").innerHTML="O";                    
+                }
+                else if(m2>80){
+                    document.getElementById("g2").innerHTML="A+";
+                }
+                else if(m2>70){
+                    document.getElementById("g2").innerHTML="A";
+                }
+                else if(m2 >60){
+                    document.getElementById("g2").innerHTML="B+";
+                }
+                else if(m2>50){
+                    document.getElementById("g2").innerHTML="B";
+                }
+                else if(m2==0){
+                    document.getElementById("g2").innerHTML="RA/SF";
+                }
+                else{
+                    document.getElementById("g2").innerHTML="W/AB/SA";
+                }              
+                //3
+                if(m3>90){
+                    document.getElementById("g3").innerHTML="O";                    
+                }
+                else if(m3>80){
+                    document.getElementById("g3").innerHTML="A+";
+                }
+                else if(m3>70){
+                    document.getElementById("g3").innerHTML="A";
+                }
+                else if(m3>60){
+                    document.getElementById("g3").innerHTML="B+";
+                }
+                else if(m3>50){
+                    document.getElementById("g3").innerHTML="B";
+                }
+                else if(m3==0){
+                    document.getElementById("g3").innerHTML="RA/SF";
+                }
+                else{
+                    document.getElementById("g3").innerHTML="W/AB/SA";
+                }              
+                //4
+                if(m4>90){
+                    document.getElementById("g4").innerHTML="O";                    
+                }
+                else if(m4>80){
+                    document.getElementById("g4").innerHTML="A+";
+                }
+                else if(m4>70){
+                    document.getElementById("g4").innerHTML="A";
+                }
+                else if(m4>60){
+                    document.getElementById("g4").innerHTML="B+";
+                }
+                else if(m4>50){
+                    document.getElementById("g4").innerHTML="B";
+                }
+                else if(m4==0){
+                    document.getElementById("g4").innerHTML="RA/SF";
+                }
+                else{
+                    document.getElementById("g4").innerHTML="W/AB/SA";
+                }              
+                //5
+                if(m5>90){
+                    document.getElementById("g5").innerHTML="O";                    
+                }
+                else if(m5>80){
+                    document.getElementById("g5").innerHTML="A+";
+                }
+                else if(m5>70){
+                    document.getElementById("g5").innerHTML="A";
+                }
+                else if(m5>60){
+                    document.getElementById("g5").innerHTML="B+";
+                }
+                else if(m5>50){
+                    document.getElementById("g5").innerHTML="B";
+                }
+                else if(m5==0){
+                    document.getElementById("g5").innerHTML="RA/SF";
+                }
+                else{
+                    document.getElementById("g5").innerHTML="W/AB/SA";
+                }              
+                //6
+                if(m6>90){
+                    document.getElementById("g6").innerHTML="O";                    
+                }
+                else if(m6>80){
+                    document.getElementById("g6").innerHTML="A+";
+                }
+                else if(m6>70){
+                    document.getElementById("g6").innerHTML="A";
+                }
+                else if(m6>60){
+                    document.getElementById("g6").innerHTML="B+";
+                }
+                else if(m6>50){
+                    document.getElementById("g6").innerHTML="B";
+                }
+                else if(m6 == 0){
+                    document.getElementById("g6").innerHTML="RA/SF";
+                }
+                else{
+                    document.getElementById("g6").innerHTML="W/AB/SA";
+                } 
+                //7
+                if(m7>90){
+                    document.getElementById("g7").innerHTML="O";                    
+                }
+                else if(m7>80){
+                    document.getElementById("g7").innerHTML="A+";
+                }
+                else if(m7>70){
+                    document.getElementById("g7").innerHTML="A";
+                }
+                else if(m7>60){
+                    document.getElementById("g7").innerHTML="B+";
+                }
+                else if(m7>50){
+                    document.getElementById("g7").innerHTML="B";
+                }
+                else if(m7 == 0){
+                    document.getElementById("g7").innerHTML="RA/SF";
+                }
+                else{
+                    document.getElementById("g7").innerHTML="W/AB/SA";
+                }                           
+        }
+        </script>
+    </body>
+</html>
+</body>
+</html>
+
+<!-- <tr>
+    <td><label for="name">NAME:</label></td>
+    <td colspan="3"><input type="text" id="n"  ></td>
+    
+</tr>
+<tr>
+    <td><label for="roll">ROLL NO:</label></td>
+    <td colspan="3"><input type="text" id="roll" >
+
+</tr>
+<tr>
+    <th colspan="4" style="text-align: center;">ENTER YOUR MARKS AND CREDIT</th>
+</tr> -->
+<!-- m1=document.getElementById('n').value;
+                m2=parseInt(document.getElementById('roll').value); -->
